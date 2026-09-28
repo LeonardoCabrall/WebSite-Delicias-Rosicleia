@@ -1,7 +1,5 @@
 # Delícias Rosicleia
 
-![Página inicial do site Delícias Rosicleia](public/site-preview.png)
-
 Site institucional e cardápio digital da Delícias Rosicleia. A experiência apresenta a marca, permite explorar os produtos e encaminha os pedidos para o canal oficial da loja no iFood.
 
 <p align="center">
