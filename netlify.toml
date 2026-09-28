@@ -3,3 +3,6 @@ command = "npm run build:netlify"
 
 [build.environment]
 NODE_VERSION = "22.13.0"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"
