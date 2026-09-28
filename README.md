@@ -2,6 +2,10 @@
 
 Site institucional e cardápio digital da Delícias Rosicleia. A experiência apresenta a marca, permite explorar os produtos e encaminha os pedidos para o canal oficial da loja no iFood.
 
+<p align="center">
+  <img src="./public/bk.PNG" alt="VF Imóveis" width="100%" />
+</p>
+
 ## O que você encontra
 
 - Página inicial com apresentação da marca, produto em destaque e horários de funcionamento.
