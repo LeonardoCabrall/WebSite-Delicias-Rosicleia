@@ -52,12 +52,24 @@ npm run dev
 
 Abra [http://localhost:3000](http://localhost:3000).
 
+## Publicar no Netlify
+
+O deploy usa Next.js e o adaptador Next.js do Netlify. Para publicar pela primeira vez:
+
+1. Envie o repositório para o GitHub.
+2. No Netlify, escolha **Add new project** e conecte sua conta do GitHub.
+3. Importe `LeonardoCabrall/WebSite-Delicias-Rosicleia` e escolha a branch `main`.
+4. Confirme o deploy. O Netlify usa `netlify.toml`, instala as dependências e executa `npm run build:netlify`.
+
+As configurações de build e a versão do Node já estão definidas no projeto. Depois da conexão inicial, novos commits enviados para `main` iniciam novos deploys automaticamente.
+
 ## Comandos
 
 | Comando | Descrição |
 | --- | --- |
 | `npm run dev` | Inicia o servidor de desenvolvimento. |
 | `npm run build` | Gera a versão de produção. |
+| `npm run build:netlify` | Gera a versão Next.js usada no deploy do Netlify. |
 | `npm start` | Executa a versão gerada com Wrangler; rode `npm run build` antes. |
 | `npm test` | Executa os testes do site. Por padrão, espera o servidor em `http://localhost:3000`. |
 | `npm run lint` | Verifica o código com Oxlint. |
