@@ -179,11 +179,11 @@ test('cores de texto pequeno atingem contraste AA no modo claro', () => {
   assert.ok(contraste('#6b5d45', '#fffdf9') >= 4.5);
 });
 
-test('header, filtro e tema expõem seus estados acessíveis', async () => {
-  const [header, catalogo, tema, botao] = await Promise.all([
+test('header, filtros e tema claro expõem os estados esperados', async () => {
+  const [header, catalogo, layout, botao] = await Promise.all([
     readFile(join(process.cwd(), 'components/site-header.tsx'), 'utf8'),
     readFile(join(process.cwd(), 'components/menu-catalog.tsx'), 'utf8'),
-    readFile(join(process.cwd(), 'components/ui/theme-toggle.tsx'), 'utf8'),
+    readFile(join(process.cwd(), 'app/layout.tsx'), 'utf8'),
     readFile(join(process.cwd(), 'components/ui/flow-button.tsx'), 'utf8'),
   ]);
 
@@ -192,9 +192,10 @@ test('header, filtro e tema expõem seus estados acessíveis', async () => {
   );
   assert.ok(catalogo.includes('aria-pressed={ativa}'));
   assert.ok(catalogo.includes('grid size-11'));
-  assert.ok(tema.includes('aria-pressed={isDark}'));
-  assert.ok(tema.includes("'Ativar tema claro'"));
-  assert.ok(tema.includes("'Ativar tema escuro'"));
+  assert.ok(layout.includes('forcedTheme="light"'));
+  assert.ok(layout.includes('defaultTheme="light"'));
+  assert.ok(layout.includes('enableSystem={false}'));
+  assert.doesNotMatch(header, /ThemeToggle/);
   assert.ok(botao.includes('abre em uma nova aba'));
   assert.ok(botao.includes('aria-hidden="true"'));
   assert.match(html, /href="#conteudo-principal"/);
